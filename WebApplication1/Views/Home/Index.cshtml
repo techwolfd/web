@@ -1,0 +1,67 @@
+﻿@{
+  ViewData["Title"] = "Home Page";
+}
+
+<style>
+  p {
+    color: snow;
+    background: grey;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+  }
+
+  #animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+  }
+</style>
+
+<div class="text-center">
+  <h1 class="display-4">Welcome wolf</h1>
+  <img src="img.jpg" alt="imagen no show">
+
+  <br>
+
+  <p>Video of happy dog</p>
+
+  <a href="https://www.youtube.com/watch?v=d3pcXM5wfvA" target="new">  go to youtube happy dog  </a>
+
+
+  <br>
+
+  <p><button onclick="myMove()">Click Me</button></p>
+
+  <div id="container">
+    <div id="animate"></div>
+  </div>
+
+  <script>
+        function myMove() {
+            let id = null;
+            const elem = document.getElementById("animate");
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 5);
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+  </script>
+
+  <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
